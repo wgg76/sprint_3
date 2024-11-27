@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Superhéroe</title>
+</head>
+<body>
+  <h1>Agregar un nuevo superhéroe</h1>
+  <form action="/heroes" method="POST">
+    <!-- Campo para el ID -->
+    <label for="id">ID:</label>
+    <input type="number" id="id" name="id" required>
+    <br><br>
+
+    <!-- Campo para el nombre del superhéroe -->
+    <label for="nombreSuperHeroe">Nombre del superhéroe:</label>
+    <input type="text" id="nombreSuperHeroe" name="nombreSuperHeroe" required>
+    <br><br>
+
+    <!-- Campo para el nombre real -->
+    <label for="nombreReal">Nombre real:</label>
+    <input type="text" id="nombreReal" name="nombreReal" required>
+    <br><br>
+
+    <!-- Campo para la edad -->
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="0" required>
+    <br><br>
+
+    <!-- Campo para el planeta de origen -->
+    <label for="planetaOrigen">Planeta de origen:</label>
+    <input type="text" id="planetaOrigen" name="planetaOrigen" value="Tierra">
+    <br><br>
+
+    <!-- Campo para la debilidad -->
+    <label for="debilidad">Debilidad:</label>
+    <input type="text" id="debilidad" name="debilidad">
+    <br><br>
+
+    <!-- Campo para los poderes -->
+    <label for="poderes">Poderes (separados por comas):</label>
+    <input type="text" id="poderes" name="poderes" required>
+    <br><br>
+
+    <!-- Campo para los aliados -->
+    <label for="aliados">Aliados (separados por comas):</label>
+    <input type="text" id="aliados" name="aliados">
+    <br><br>
+
+    <!-- Campo para los enemigos -->
+    <label for="enemigos">Enemigos (separados por comas):</label>
+    <input type="text" id="enemigos" name="enemigos">
+    <br><br>
+
+    <!-- Botón para enviar -->
+    <button type="submit">Agregar Superhéroe</button>
+  </form>
+</body>
+</html>

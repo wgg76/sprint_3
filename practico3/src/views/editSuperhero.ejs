@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Superhéroe</title>
+    <link rel="stylesheet" href="/form.css">  
+</head>
+<body>
+    <header>
+        <h1>Formulario para Editar Superhéroe</h1>
+    </header>
+
+    <main>
+        <form action="/heroes/<%= superheroe._id %>?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT"> <!-- Sobrescribir el método HTTP -->
+            
+            <label for="nombreSuperHeroe">Nombre del Superhéroe:</label>
+            <input type="text" id="nombreSuperHeroe" name="nombreSuperHeroe" value="<%= superheroe.nombreSuperHeroe %>" required>
+            
+            <label for="nombreReal">Nombre Real:</label>
+            <input type="text" id="nombreReal" name="nombreReal" value="<%= superheroe.nombreReal %>" required>
+            
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" value="<%= superheroe.edad %>" required>
+            
+            <label for="planetaOrigen">Planeta de Origen:</label>
+            <input type="text" id="planetaOrigen" name="planetaOrigen" value="<%= superheroe.planetaOrigen %>">
+            
+            <label for="debilidad">Debilidad:</label>
+            <input type="text" id="debilidad" name="debilidad" value="<%= superheroe.debilidad %>">
+            
+            <label for="poderes">Poderes:</label>
+            <input type="text" id="poderes" name="poderes" value="<%= superheroe.poderes.join(', ') %>">
+            
+            <label for="aliados">Aliados:</label>
+            <input type="text" id="aliados" name="aliados" value="<%= superheroe.aliados.join(', ') %>">
+            
+            <label for="enemigos">Enemigos:</label>
+            <input type="text" id="enemigos" name="enemigos" value="<%= superheroe.enemigos.join(', ') %>">
+            
+            <button type="submit">Guardar Cambios</button>
+        </form>
+        
+        
+
+        <div class="flex space-x-4">
+            <a href="/dashboard" class="border border-black bg-red-500 text-black font-bold py-2 px-4 rounded">Cancelar</a>
+           
+          </div>
+    </main>
+</body>
+</html>
+

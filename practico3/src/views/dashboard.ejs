@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard de Superhéroes</title>
+    <link rel="stylesheet" href="/styles.css">
+    
+  </head>
+  <body>
+    <header>
+      <h1>Dashboard de Superhéroes</h1>
+    </header>
+
+    <main>
+      <h2>Lista de Superhéroes</h2>
+      <!-- Botón de Agregar -->
+      <a href="/heroes/agregar" style="text-decoration: none; color: green;"
+      >Agregar</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Nombre Real</th>
+            <th>Edad</th>
+            <th>Planeta Origen</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% superheroes.forEach(function(superheroe) { %>
+          <tr>
+            <td><%= superheroe.nombreSuperHeroe %></td>
+            <td><%= superheroe.nombreReal %></td>
+            <td><%= superheroe.edad %></td>
+            <td><%= superheroe.planetaOrigen %></td>
+            <td>
+              
+
+              
+              <!-- Botón de Editar (redirige a la página de edición) -->
+            <a href="/heroes/<%= superheroe._id %>/editar" style="text-decoration: none; color: blue">Editar</a>
+
+            
+              <!-- Botón de Eliminar -->
+              <form action="/api/heroes/delete/<%= superheroe._id %>?_method=DELETE" method="POST">
+                <button type="submit" style="color: rgb(245, 239, 239);">Eliminar</button>
+            </form>
+            
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
